@@ -57,7 +57,20 @@ From this we get:
 V^{\pi}(s) = E_{\pi}\big\{r_0 + \gamma V^{\pi}(s_1) \big \vert s_0 = s \big\}
 \end{align*}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AV%5E%7B%5Cpi%7D%28s%29+%3D+E_%7B%5Cpi%7D%5Cbig%5C%7Br_0+%2B+%5Cgamma+V%5E%7B%5Cpi%7D%28s_1%29+%5Cbig+%5Cvert+s_0+%3D+s+%5Cbig%5C%7D%0A%5Cend%7Balign%2A%7D)
 
-Fill the table with a positive learning rate \alpha
+Fill the table ![\begin{align*}
+V(s)
+\end{align*}
+](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbegin%7Balign%2A%7D%0AV%28s%29%0A%5Cend%7Balign%2A%7D%0A)
+ with a positive learning rate ![\begin{align*}
+\alpha
+\end{align*}
+](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbegin%7Balign%2A%7D%0A%5Calpha%0A%5Cend%7Balign%2A%7D%0A)
+
+![\begin{align*}
+V(s) \leftarrow V(s) = \alpha (r + \gamma V(s') - V(s))
+\end{align*}
+](https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5Cbegin%7Balign%2A%7D%0AV%28s%29+%5Cleftarrow+V%28s%29+%3D+%5Calpha+%28r+%2B+%5Cgamma+V%28s%27%29+-+V%28s%29%29%0A%5Cend%7Balign%2A%7D%0A)
+
 
 ### References
 https://medium.com/vernacular-ai/reinforcement-learning-step-by-step-17cde7dbc56c
