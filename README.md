@@ -2,14 +2,13 @@
 
 ## The Goal
 
-The goal of this project was to create a bot/agent to play Ludo, as a gentle introduction to Reinforcement Learning. But what it really turned out to be was a 
-jouney through the wild world of GitHub to learn about a completely new topic of which I had minimal prior knowledge. Navigating through the different projects gave 
-me as a more general study of Reinforcement Learning to create game playing agents and the challenge of tweaking it to this specific problem. The path I took 
-is detailed here. I should note, that this project is still WIP, so if you don't like anti-climactic endings then don't read on. But, if someone can help
+The goal of this project was to create a bot/agent to play Ludo, as a gentle introduction to Reinforcement Learning. But what it actually turned into, is a 
+journey through the wild world of GitHub to learn about a completely new topic of which I had minimal prior knowledge. Navigating through the different projects provided a more general study of Reinforcement Learning to create game playing agents and the challenge of tweaking it to this specific problem. The path I took 
+is detailed here. I should note that this project is still WIP, so if you don't like anticlimactic endings then don't read on. But, if someone can help
 me understand what I am doing wrong, I would love some help!
 
 ## Ludo 
-Many summer afternoons have been spent on this game. [A details explination about the games and the rules of this paricular challenge are detailed here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
+Many summer afternoons have been spent on this game. [A detailed explanation about the games and the rules of this particular challenge are detailed here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
 
 
 ## Attempt 1 - The Naive Bot
@@ -21,21 +20,21 @@ I started with naive bot which considered the following:
 
 And gave them respective weights. This agent beat the simple random agent 90% of the team. The whole game now is to optimize these weights. Can reinforcement learning help us with that?
 
-The `model.py` file has been modified to add `simple_player4` and `simple_payer5`, which basically do they same thing. I was playing them against eachother to experiment with the weights for each feature. The final agent function can be found in `akanksha_ludo.py`.
+The `model.py` file has been modified to add `simple_player4` and `simple_payer5`, which basically do the same thing. I was playing them against each other to experiment with the weights for each feature. The final agent function can be found in `akanksha_ludo.py`.
 
 ### Core idea behind Reinforcement Learning
-Modeled as a Markov Decision Process the value function attempts to maximizes the return by maximizing the cummative reward at the end of the game (final state)
+Modeled as a Markov Decision Process the value function attempts to maximizes the return by maximizing the commutative reward at the end of the game (final state)
 from the current state.
 
 ## Attempt 2 - Deep Q-Learning algorithm for Snake
 
 A Deep Reinforcement learning Algorithm using Q-tables is explained and implemented here as an agent to play snake. It is able to create a pretty good bot in about 
-15 mins to traning (though sometimes it gets caught in a loop). However, I struggled with converting the single-player-game into a multi-player game. 
+15 mins to training (though sometimes it gets caught in a loop). However, I struggled with converting the single-player-game into a multiplayer game. 
 
 The whole `snakega` repo has been cloned in the `snake-ga` folder and `train_from_snake.py` is a very incomplete attempt converting the model to play ludo. 
 
 ### Core idea behind Q-tables
-Store the maximum furure reward for every action from every state.
+Store the maximum future reward for every action from every state.
 
 ### References
 
@@ -45,8 +44,7 @@ https://github.com/maurock/snake-ga
 
 ## Attempt 3 - Temporal Difference algorithm for Tic Tac Toe
 
-The TD algorithm implemented to train a bot to play tic-tac-toe. The challenge here was that tic-tac-toe has a very small gamespace, and the algorithm was able to 
-map every possible state the of the board and make decisions accordingly. This is not possible with ludo. 
+The TD algorithm was implemented to train a bot to play tic-tac-toe. The challenge here was that tic-tac-toe has a very small gamespace, and the algorithm was able to map every possible state of the board and make decisions accordingly. This is not possible with ludo. 
 
 The whole `tic-tac-toe` repo has been cloned in the `tic-tac-toe` folder and `agent_from_tictactoe.py` is a very incomplete attempt at using this algorithm to create a Ludo playing agent.
 
@@ -90,11 +88,11 @@ https://medium.com/vernacular-ai/reinforcement-learning-step-by-step-17cde7dbc56
 https://github.com/ltbringer/tic_tac_toe/blob/master/agent.py
 
 ## Interesting Observation (sun)
-There is a famous impletentation of the Temporal Difference algorithm (TD-Lambda) to build a backgammon-playing agent know as TDGammon (circa 1992), a huge
+There is a famous implementation of the Temporal Difference algorithm (TD-Lambda) to build a backgammon-playing agent known as TDGammon (circa 1992), a huge
 advancement for its time. As it happens, Ludo is just a less complicated version of backgammon. 
 
 ## Attempt 4 - TDGammon
-This showed some promise. With this approach far enough to experiment. I was able to successfully implement a verison of ludo which will fit with the TDgammon model. I then added the same features I had added to my smartest naive bot, and experimented with them. The goal is to get this model to learn the respective weights for those features so it can repeatably beat my naive bot. Unfortunatly, our agent will not get smarter with more training.
+This showed some promise. With this approach far enough to experiment. I was able to successfully implement a version of ludo which will fit with the TDgammon model. I then added the same features I had added to my smartest naive bot, and experimented with them. The goal is to get this model to learn the respective weights for those features so it can repeatedly beat my naive bot. Unfortunately, our agent will not get smarter with more training.
 
 All the code is on the `ludo` folder, and it can also be tested with `play.py`
 
