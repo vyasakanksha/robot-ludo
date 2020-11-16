@@ -54,9 +54,7 @@ def match(counters,length,safesquares,player1,player2,maxiters=1000,starting=0,
 #         movelist += [move]
     if verbose:
         print("Cuts",cuts,"Moves",i+1)
-    
     return result
-
 
 def judge(counters,length,safesquares,player1,player2,games=100,starting=0):
     '''
@@ -94,3 +92,69 @@ def simple_player2(board,turn,roll):
     elif turn == 1:
         mymove = min(moves, key=lambda triple: halfshift(triple[1],board.length))
     return mymove
+
+def simple_player3(board,turn,roll):
+    moves = getmoves(board,turn,roll)
+    mymove = random.choice(moves)
+    return mymove
+
+def simple_player4(board,turn,roll):
+
+    rlist = []
+    moves = getmoves(board,turn,roll)
+    for m in moves:
+        b = makemove(board,m,copyboard=True)
+        rlist.append(reward(board, b, turn))
+    m = max(rlist)
+    optim_moves = [moves[i] for i, j in enumerate(rlist) if j == m]
+    mymove = random.choice(optim_moves)
+    bb = makemove(board,mymove,copyboard=True)
+    
+    return mymove
+
+def simple_player5(board,turn,roll):
+    rlist = []
+    moves = getmoves(board,turn,roll)
+    for m in moves:
+        b = makemove(board,m,copyboard=True)
+        rlist.append(reward1(board, b, turn))
+    m = max(rlist)
+    optim_moves = [moves[i] for i, j in enumerate(rlist) if j == m]
+    mymove = random.choice(optim_moves)
+    bb = makemove(board,mymove,copyboard=True)
+    return mymove
+
+def reward_temp(counters, pen, inplay, safe):
+    r = 0
+    r += sum(inplay)*5
+    r += (counters - (pen + sum(inplay))) * 20
+
+    r += sum([x for x,y in zip(inplay,safe) if y]) * 5
+    # r += (counters - (pen + inplay)) * 20
+    return r
+
+def reward_temp1(counters, pen, inplay, safe):
+    r = 0
+    r += sum(inplay) * 2
+    r += (counters - (pen + sum(inplay))) * 10
+    
+    # r += (counters - (pen + inplay)) * 20
+    r += sum([x for x,y in zip(inplay,safe) if y]) * 0
+    return r
+
+def reward(oldBoard, board, turn):
+    reward = 0
+    if turn == 0:
+        reward = (reward_temp(board.counters, board.redpen, board.red, board.safe)) - (reward_temp(board.counters, board.bluepen, board.blue, board.safe))
+    if turn == 1:
+        reward = (reward_temp(board.counters, board.bluepen, board.blue, board.safe)) - (reward_temp(board.counters, board.redpen, board.red, board.safe))
+    return reward
+
+def reward1(oldBoard, board, turn):
+    reward1 = 0
+    if turn == 0:
+        reward1 = (reward_temp1(board.counters, board.redpen, board.red, board.safe)) - (reward_temp1(board.counters, board.bluepen, board.blue, board.safe))
+    if turn == 1:
+        reward1 = (reward_temp1(board.counters, board.bluepen, board.blue, board.safe)) - (reward_temp1(board.counters, board.redpen, board.red, board.safe))
+    return reward1
+
