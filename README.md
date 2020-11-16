@@ -9,18 +9,30 @@ is detailed here. I should note, that this project is still WIP, so if you don't
 me understand what I am doing wrong, I would love some help!
 
 ## Ludo 
-Many summer afternoons have been spent on this game. A details explination about the games and the rules of this paricular challenge are detailed here.
+Many summer afternoons have been spent on this game. [A details explination about the games and the rules of this paricular challenge are detailed here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
+
+
+## Attempt 1 - The Naive Bot
+
+I started with naive bot which considered the following: 
+1. The number of pieces which were back home
+2. The number of pieces out of the pen
+3. The number of pieces on safe squares 
+
+And gave them respective weights. This agent beat the simple random agent 90% of the team. The whole game now is to optimize these weights. Can reinforcement learning help us with that?
+
+The `model.py` file has been modified to add `simple_player4` and `simple_payer5`, which basically do they same thing. I was playing them against eachother to experiment with the weights for each feature. The final agent function can be found in `akanksha_ludo.py`.
 
 ### Core idea behind Reinforcement Learning
 Modeled as a Markov Decision Process the value function attempts to maximizes the return by maximizing the cummative reward at the end of the game (final state)
 from the current state.
 
-## Attempt 1 - Deep Q-Learning algorithm for Snake
+## Attempt 2 - Deep Q-Learning algorithm for Snake
 
 A Deep Reinforcement learning Algorithm using Q-tables is explained and implemented here as an agent to play snake. It is able to create a pretty good bot in about 
 15 mins to traning (though sometimes it gets caught in a loop). However, I struggled with converting the single-player-game into a multi-player game. 
 
-`train_from_snake.py` is a very incomplete attempt at this. 
+The whole `snakega` repo has been cloned in the `snake-ga` folder and `train_from_snake.py` is a very incomplete attempt converting the model to play ludo. 
 
 ### Core idea behind Q-tables
 Store the maximum furure reward for every action from every state.
@@ -31,12 +43,12 @@ https://towardsdatascience.com/snake-played-by-a-deep-reinforcement-learning-age
 
 https://github.com/maurock/snake-ga
 
-## Attempt 2 - Temporal Difference algorithm for Tic Tac Toe
+## Attempt 3 - Temporal Difference algorithm for Tic Tac Toe
 
 The TD algorithm implemented to train a bot to play tic-tac-toe. The challenge here was that tic-tac-toe has a very small gamespace, and the algorithm was able to 
 map every possible state the of the board and make decisions accordingly. This is not possible with ludo. 
 
-`agent_from_tictactoe.py` is a very incomplete attempt at this. 
+The whole `tic-tac-toe` repo has been cloned in the `tic-tac-toe` folder and `agent_from_tictactoe.py` is a very incomplete attempt at using this algorithm to create a Ludo playing agent.
 
 ### Core idea behind TD
 Sample the environment to adjust the model even before the final outcome is known, and estimate the value function.
@@ -81,12 +93,12 @@ https://github.com/ltbringer/tic_tac_toe/blob/master/agent.py
 There is a famous impletentation of the Temporal Difference algorithm (TD-Lambda) to build a backgammon-playing agent know as TDGammon (circa 1992), a huge
 advancement for its time. As it happens, Ludo is just a less complicated version of backgammon. 
 
-## Attempt 3 - TDGammon
-This showed some promise. With this approach far enough to experiment. I was able to successfully implement a verison of ludo which will fit with the TDgammon model. I successfully added the same features which my best naive agent was using and kept tweaking them. Goal was to get it to beat my naive agent >50% of the time. Unfortunatly, it just won't get smarter. 
+## Attempt 4 - TDGammon
+This showed some promise. With this approach far enough to experiment. I was able to successfully implement a verison of ludo which will fit with the TDgammon model. I then added the same features I had added to my smartest naive bot, and experimented with them. The goal is to get this model to learn the respective weights for those features so it can repeatably beat my naive bot. Unfortunatly, our agent will not get smarter with more training.
 
 All the code is on the `ludo` folder, and it can also be tested with `play.py`
 
-The next step would be to try and encode the whole board. 
+The next step would be to try and encode the whole board as features. 
 
 ### References
 https://medium.com/jim-fleming/before-alphago-there-was-td-gammon-13deff866197
