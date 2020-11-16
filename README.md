@@ -24,7 +24,7 @@ And gave them respective weights. This agent beat the simple random agent 90% of
 The `model.py` file has been modified to add `simple_player4` and `simple_payer5`, both do the same thing. I was playing them against each other to experiment with the weights for each feature. The final agent function can be found in `akanksha_ludo.py`.
 
 ### Core idea behind Reinforcement Learning
-Modeled as a Markov Decision Process the value function attempts to maximizes the return by maximizing the commutative reward at the end of the game (final state)
+Modeled as a Markov Decision Process the value function attempts to maximizes the return by maximizing the cumulative reward at the end of the game (final state)
 from the current state.
 
 ## Attempt 2 - Deep Q-Learning algorithm for Snake
