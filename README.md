@@ -24,13 +24,12 @@ And gave them respective weights. This agent beat the simple random agent 90% of
 The `model.py` file has been modified to add `simple_player4` and `simple_payer5`, both do the same thing. I was playing them against each other to experiment with the weights for each feature. The final agent function can be found in `akanksha_ludo.py`.
 
 ### Core idea behind Reinforcement Learning
-Modeled as a Markov Decision Process the value function attempts to maximizes the return by maximizing the cumulative reward at the end of the game (final state)
+Modeled as a Markov Decision Process the `value function` attempts to maximizes the return by maximizing the cumulative reward at the end of the game (final state)
 from the current state.
 
 ## Attempt 2 - Deep Q-Learning algorithm for Snake
 
-A Deep Reinforcement learning Algorithm using Q-tables is explained and implemented here as an agent to play snake. It is able to create a pretty good bot in about 
-15 mins to training (though sometimes it gets caught in a loop). However, I struggled with converting the single-player-game into a multiplayer game. 
+A Deep Reinforcement learning Algorithm using Q-tables is explained and implemented here to train an agent to play the game `snake`. It is able to create a pretty good bot in about 15 mins to training (though sometimes it gets caught in a loop). Here I struggled with converting the single-player-game into a multiplayer game. 
 
 The whole `snakega` repo has been cloned in the `snake-ga` folder and `train_from_snake.py` is a very incomplete attempt converting the model to play ludo. 
 
