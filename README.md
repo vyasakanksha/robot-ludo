@@ -11,7 +11,7 @@ I should note that I have not been able to solve this yet, so if you don't like 
 All the code is in `python (2)` , with `tensorflow` and `keras`. 
 
 ## Ludo 
-Many summer afternoons have been spent on this game. [A detailed explanation about the games and the rules of this particular challenge can be found here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
+Many summer afternoons have been spent on this game. [A detailed explanation about this game and the rules of this particular challenge can be found here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
 
 
 ## Attempt 1 - The Naive Bot
