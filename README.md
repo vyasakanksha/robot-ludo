@@ -51,6 +51,13 @@ V \leftarrow \text{State value function of MDP} \\
 \end{align*}
 ](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AV%5E%7B%5Cpi%7D%28s%29+%3D+E_%7Ba+%7E+%5Cpi%7D%5Cbig%5C%7B%5Csum%5E%7B%5Cinfinity%7D_%7Bt%3D0%7D%5Cgamma%5Et+r_t+%28a_t%29+%5Cbig+%5Cvert+s_0+%3D+s%5Cbig%5C%7D+%0A%5C%3B+%5Ctext%7Bwhere%3A%7D+%5C%5C+%5C%5C+%5C%5C%0As+%5Cleftarrow+%5Ctext%7BStates%7D+%5C%5C%0Ar+%5Cleftarrow+%5Ctext%7BReward%7D+%5C%5C%0A%5Cgamma+%5Cleftarrow+%5Ctext%7Bdecay+factor%7D+%5C%5C%0AV+%5Cleftarrow+%5Ctext%7BState+value+function+of+MDP%7D+%5C%5C%0A%5Cend%7Balign%2A%7D%0A)
 
+From this we get: 
+
+![\begin{align*}
+V^{\pi}(s) = E_{\pi}\big\{r_0 + \gamma V^{\pi}(s_1) \big \vert s_0 = s \big\}
+\end{align*}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AV%5E%7B%5Cpi%7D%28s%29+%3D+E_%7B%5Cpi%7D%5Cbig%5C%7Br_0+%2B+%5Cgamma+V%5E%7B%5Cpi%7D%28s_1%29+%5Cbig+%5Cvert+s_0+%3D+s+%5Cbig%5C%7D%0A%5Cend%7Balign%2A%7D)
+
+Fill the table with a positive learning rate \alpha
 
 ### References
 https://medium.com/vernacular-ai/reinforcement-learning-step-by-step-17cde7dbc56c
