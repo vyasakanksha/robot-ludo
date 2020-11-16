@@ -8,6 +8,8 @@ What it has actually turned into is a journey through the wild world of GitHub a
 
 I should note that I have not been able to solve this yet, so if you don't like anticlimactic endings, don't read on. But, if you can help me understand what I am doing wrong, I would love some help!
 
+All the code is in `python (2)` , with `tensorflow` and `keras`. 
+
 ## Ludo 
 Many summer afternoons have been spent on this game. [A detailed explanation about the games and the rules of this particular challenge can be found here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
 
@@ -87,14 +89,14 @@ https://medium.com/vernacular-ai/reinforcement-learning-step-by-step-17cde7dbc56
 
 https://github.com/ltbringer/tic_tac_toe/blob/master/agent.py
 
-## Interesting Observation (sun)
+## Interesting Observation
 There is a famous implementation of the Temporal Difference algorithm (TD-Lambda) to build a backgammon-playing agent known as TDGammon (circa 1992), a huge
 advancement for its time. As it happens, Ludo is just a less complicated version of backgammon. 
 
 ## Attempt 4 - TDGammon
-This showed some promise. With this approach far enough to experiment. I was able to successfully implement a version of ludo which will fit with the TDgammon model. I then added the same features I had added to my smartest naive bot, and experimented with them. The goal is to get this model to learn the respective weights for those features so it can repeatedly beat my naive bot. Unfortunately, our agent will not get smarter with more training.
+This approach showed some promise, and I was able to get far enough to actually experiment. I successfully implemented a version of ludo which will fit with the TDgammon model. Then I added the same features from my smart naive bot in `Attempt 1`, and experimented with them. The goal is to get this model to learn the respective weights for those features so that it can repeatedly beat my naive bot. Unfortunately, no matter how much I train it, our agent will not get smarter.
 
-All the code is on the `ludo` folder, and it can also be tested with `play.py`
+All the code is on the `ludo` folder (start with `main.py`). It can also be tested with `play.py`
 
 The next step would be to try and encode the whole board as features. 
 
