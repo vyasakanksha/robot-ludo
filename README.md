@@ -2,10 +2,9 @@
 
 ## The Goal
 
-The goal of this project was to create a bot/agent to play Ludo, as a gentle introduction to Reinforcement Learning. But what it actually turned into, is a 
-journey through the wild world of GitHub to learn about a completely new topic of which I had minimal prior knowledge. Navigating through the different projects provided a more general study of Reinforcement Learning to create game playing agents and the challenge of tweaking it to this specific problem. The path I took 
-is detailed here. I should note that this project is still WIP, so if you don't like anticlimactic endings then don't read on. But, if someone can help
-me understand what I am doing wrong, I would love some help!
+The goal of this project was to create a bot/agent to play Ludo, as a gentle introduction to Reinforcement Learning. 
+
+What it has actually turned into, is a journey through the wild world of GitHub to learn about a completely new topic of which I had minimal prior knowledge. Navigating through the different projects provided a more general study of Reinforcement Learning to create game playing agents and the challenge of tweaking it to this specific problem. The path I took is detailed here. I should note that this project is still WIP, so if you don't like anticlimactic endings then don't read on. But, if someone can help me understand what I am doing wrong, I would love some help!
 
 ## Ludo 
 Many summer afternoons have been spent on this game. [A detailed explanation about the games and the rules of this particular challenge are detailed here.](https://github.com/vyasakanksha/robot-ludo/blob/main/Ludo.md)
