@@ -105,7 +105,7 @@ https://medium.com/jim-fleming/before-alphago-there-was-td-gammon-13deff866197
 
 https://github.com/fomorians/td-gammon
 
-## Attempt 4 - Deep Q-Learning for Connect4 (TO DO)
+## Attempt 5 - Deep Q-Learning for Connect4 (TO DO)
 
 https://towardsdatascience.com/playing-connect-4-with-deep-q-learning-76271ed663ca
 
